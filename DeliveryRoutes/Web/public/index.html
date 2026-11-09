@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Delivery Routes</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>Delivery Routes</h1>
+    <label class="start-picker">Posición inicial
+      <select id="startSelect" aria-label="Posición inicial del domiciliario"></select>
+    </label>
+    <p class="stats" id="stats"></p>
+  </header>
+
+  <main class="layout">
+    <section class="map-area" aria-label="Mapa de la ciudad">
+      <svg id="map" role="img" aria-label="Mapa de la ciudad con la ruta del domiciliario"></svg>
+      <ul class="legend">
+        <li><i class="dot start"></i>Salida</li>
+        <li><i class="dot pickup"></i>Recogida</li>
+        <li><i class="dot delivery"></i>Entrega</li>
+        <li><i class="dot both"></i>Ambas</li>
+        <li><i class="arrow"></i>Un solo sentido</li>
+      </ul>
+      <div class="player">
+        <button id="prev" type="button" aria-label="Parada anterior">Anterior</button>
+        <button id="play" type="button" class="primary">Reproducir</button>
+        <button id="next" type="button" aria-label="Parada siguiente">Siguiente</button>
+        <input id="slider" type="range" min="0" max="0" value="0" aria-label="Parada de la ruta">
+        <label class="speed">Velocidad
+          <select id="speed">
+            <option value="1">Normal</option>
+            <option value="2">Rápida</option>
+            <option value="4">Muy rápida</option>
+          </select>
+        </label>
+        <p id="progress" class="progress" role="status"></p>
+      </div>
+    </section>
+
+    <aside class="panel">
+      <div class="summary">
+        <p class="total"><strong id="totalKm">–</strong> km en total</p>
+        <p class="comparison" id="comparison"></p>
+      </div>
+      <p id="status" class="status" role="status"></p>
+      <ol id="steps" class="steps"></ol>
+    </aside>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

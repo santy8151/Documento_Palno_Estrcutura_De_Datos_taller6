@@ -1,0 +1,6 @@
+C,Pickup,1
+G,Delivery,1
+E,Pickup,2
+D,Delivery,2
+G,Pickup,3
+A,Delivery,3
